@@ -1,8 +1,8 @@
 package PokemonTypesTests;
 
-import Classes.PokemonTypes.Agua;
-import Classes.PokemonTypes.Fuego;
-import Classes.PokemonTypes.Planta;
+import Classes.PokemonTypes.WaterType;
+import Classes.PokemonTypes.FireType;
+import Classes.PokemonTypes.PlantType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -10,47 +10,42 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FireTypeTests {
 
-    private Fuego pokemonDeFuego;
-    private Fuego pokemonDeFuego2;
-    private Fuego pokemonDeFuego3;
-    private Agua pokemonDeAgua;
-    private Planta pokemonDePlanta;
+    private FireType pokemonDeFireType;
+    private FireType pokemonDeFireType2;
+    private FireType pokemonDeFireType3;
+    private WaterType pokemonDeWaterType;
+    private PlantType pokemonDePlantType;
 
     @BeforeEach
     void setUp() throws Exception {
-        pokemonDeFuego = new Fuego("miguelito", "Charizard", 10);
-        pokemonDeFuego2 = new Fuego("miguelote", "Charizard", 10);
-        pokemonDeFuego3 = new Fuego("miguelotex", "Charizard", 10);
-        pokemonDePlanta = new Planta("filip", "plantatype", 10);
-        pokemonDeAgua = new Agua("derek", "watertype", 10);
+        pokemonDeFireType = new FireType("miguelito", "Charizard", 10.0, 5.0);
+        pokemonDeFireType2 = new FireType("miguelote", "Charizard", 10.0, 5.0);
+        pokemonDeFireType3 = new FireType("miguelotex", "Charizard", 10.0, 5.0);
+        pokemonDePlantType = new PlantType("filip", "plantatype", 10.0, 5.0);
+        pokemonDeWaterType = new WaterType("derek", "watertype", 10.0, 5.0);
     }
 
     @Test
     void fuego(){
-        assertEquals(pokemonDeFuego.getName(), "miguelito");
-        assertEquals(pokemonDeFuego2.getName(), "miguelote");
-        assertEquals(pokemonDeFuego.getSpecie(), "Charizard");
-        assertEquals(pokemonDeFuego2.getSpecie(), "Charizard");
+        assertEquals(pokemonDeFireType.getName(), "miguelito");
+        assertEquals(pokemonDeFireType2.getName(), "miguelote");
+        assertEquals(pokemonDeFireType.getSpecie(), "Charizard");
+        assertEquals(pokemonDeFireType2.getSpecie(), "Charizard");
     }
 
     @Test
     void attack() {
-        pokemonDeFuego.Attack(pokemonDeAgua);
-        pokemonDeFuego.Attack(pokemonDeFuego2);
-        pokemonDeFuego.Attack(pokemonDePlanta);
-        assertEquals(pokemonDeAgua.getHp(), 5, "Water type After being attacked by a fire type Health should be 5");
-        assertEquals(pokemonDePlanta.getHp(), 0, "Plant type After being attacked by a fire type Health should be 0");
-        assertEquals(pokemonDeFuego2.getHp(), 5, "Fire type After being attacked by a fire type Health should be 5");
+        pokemonDeFireType.Attack(pokemonDeWaterType);
+        pokemonDeFireType.Attack(pokemonDeFireType2);
+        pokemonDeFireType.Attack(pokemonDePlantType);
+        assertEquals(pokemonDeWaterType.getHp(), 5.0, "Water type After being attacked by a fire type Health should be 5");
+        assertEquals(pokemonDePlantType.getHp(), 0.0, "Plant type After being attacked by a fire type Health should be 0");
+        assertEquals(pokemonDeFireType2.getHp(), 5.0, "Fire type After being attacked by a fire type Health should be 5");
     }
 
     @Test
-    void attackedFrom() {
-        pokemonDeFuego.AttackedFromFire();
-        pokemonDeFuego2.AttackedFromWater();
-        pokemonDeFuego3.AttackedFromPlant();
-        assertEquals(pokemonDeFuego.getHp(), 5 , "PokemonDeFuego, after being attacked by a fire type Health should be 5");
-        assertEquals(pokemonDeFuego2.getHp(), 0 , "PokemonDeFuego2, after being attacked by a water type Health should be 0");
-        assertEquals(pokemonDeFuego3.getHp(), 5 , "PokemonDeFuego3, after being attacked by a plant type Health should be 5");
-        assertEquals(pokemonDeFuego2.isKO(), true, "If pokemonDeFuego2's health is 0, isKO() should be true");
+    void isKO() {
+        pokemonDeWaterType.Attack(pokemonDeFireType2);
+        assertEquals(pokemonDeFireType2.isKO(), true, "If pokemonDeFuego2's health is 0, isKO() should be true");
     }
 }

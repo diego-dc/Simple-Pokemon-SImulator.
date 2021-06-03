@@ -1,5 +1,9 @@
 package Classes;
 
+import Classes.PokemonTypes.FireType;
+import Classes.PokemonTypes.PlantType;
+import Classes.PokemonTypes.WaterType;
+
 /**
  * Interface Pokemon
  *
@@ -14,10 +18,10 @@ public interface IPokemon {
     /**
      * Each pokemon can realize a simple attack
      *
-     * @param IPokemon
+     * @param target
      *      pokemon targeted for the attack.
      */
-    void Attack(IPokemon IPokemon);
+    void Attack(IPokemon target);
 
 
     /**
@@ -26,17 +30,17 @@ public interface IPokemon {
      *
      * @param Damage
      */
-    void receiveDamage(float Damage);
+    void receiveDamage(double Damage);
 
 
     /** Attack received by PlantType Pokemon */
-    void AttackedFromPlant();
+    void AttackedFromPlant(PlantType attacker);
 
     /** Attack received by FireType Pokemon */
-    void AttackedFromFire();
+    void AttackedFromFire(FireType attacker);
 
     /** Attack received by WaterType Pokemon */
-    void AttackedFromWater();
+    void AttackedFromWater(WaterType attacker);
 
     /** Will tell when a Pokemon is KO */
     boolean isKO();

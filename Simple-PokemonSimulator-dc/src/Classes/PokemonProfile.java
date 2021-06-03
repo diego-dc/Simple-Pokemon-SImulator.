@@ -1,5 +1,9 @@
 package Classes;
 
+import Classes.PokemonTypes.FireType;
+import Classes.PokemonTypes.PlantType;
+import Classes.PokemonTypes.WaterType;
+
 /**
  * Abstract Pokemon Profile
  *
@@ -16,8 +20,17 @@ package Classes;
 public abstract class PokemonProfile implements IPokemon {
     private String name;
     private String specie;
-    private float hp;
-    private float attack;
+    private double hp;
+    private double attack = 5;
+
+    /** Abstract Constructor to set parameters of a pokemon profile. */
+    public PokemonProfile(String name, String specie, double hp, double attack)
+    {
+        this.name = name;
+        this.specie = specie;
+        this.hp = hp;
+        this.attack = attack;
+    }
 
     /** Name Setter. Sets the name of the pokemon with the given String */
     protected void  setName(String newName){
@@ -36,12 +49,7 @@ public abstract class PokemonProfile implements IPokemon {
         }
     }
 
-    /** Specie Setter. Sets the Specie of the pokemon with the given String */
-    protected void setSpecie(String mySpecie)
-    {
-        this.specie = mySpecie;
-    }
-
+    /** Specie Getter. Returns the specie of the pokemon in a String */
     public String getSpecie(){
         if (this.specie != null) {
             return this.specie;
@@ -52,17 +60,44 @@ public abstract class PokemonProfile implements IPokemon {
         }
     }
 
-    public float getHp() {
-        return hp;
-    }
-
-    protected void setHp(float hp) {
+    /** HP Setter. Sets the HP of the pokemon with the given float */
+    protected void setHp(double hp) {
         this.hp = hp;
     }
 
-    // Every pokemon might receive damage when its attacked by other pokemon
-    // This method will just rest the damage (float) specified to the health of our Classes.Pokemon
-    public void receiveDamage(float damage){
+    /** HP Getter. Returns the HP of the pokemon in a float */
+    public double getHp() {
+        return hp;
+    }
+
+    /** Attack Setter. Sets the Attack of the pokemon with the given float */
+    public void setAttack(float attack) {
+        this.attack = attack;
+    }
+
+    /** Attack Getter. Returns the Attack of the pokemon in a float */
+    public double getAttack() {
+        return this.attack;
+    }
+
+    /**
+     * Indicates if this pokemon is KO or not
+     */
+    public boolean isKO(){
+        if(hp <= 0){ // we check the health, if its 0 or negative, we say is KO
+            return true;
+        }
+        else // anything else, we consider is not KO
+        {
+            return false;
+        }
+    }
+
+    /**
+     * Every pokemon might receive damage when its attacked by other pokemon
+     * This method will rest the damage (float) specified to the Hp of our Pokemon
+     */
+    public void receiveDamage(double damage){
         if(!this.isKO())
         {
             this.hp -= damage;
@@ -73,16 +108,20 @@ public abstract class PokemonProfile implements IPokemon {
         }
     }
 
-    // this method will tell us if this pokemon is KO or not
-    public boolean isKO(){
-        if(hp <= 0){ // we check the health, if its 0 or negative, we say is KO
-            return true;
-        }
-        else // anything else, we consider is not KO
-        {
-            return false;
-        }
-
+    @Override
+    public void AttackedFromPlant(PlantType attacker) {
+        this.receiveDamage(attacker.getAttack());
     }
+
+    @Override
+    public void AttackedFromFire(FireType attacker) {
+        this.receiveDamage(attacker.getAttack());
+    }
+
+    @Override
+    public void AttackedFromWater(WaterType attacker) {
+        this.receiveDamage(attacker.getAttack());
+    }
+
 
 }
