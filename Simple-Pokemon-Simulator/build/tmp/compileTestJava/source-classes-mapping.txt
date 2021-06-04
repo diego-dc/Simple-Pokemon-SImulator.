@@ -1,0 +1,6 @@
+Classes/PokemonTypes/FireTypeTests.java
+ Classes.PokemonTypes.FireTypeTests
+Classes/PokemonTypes/PlantTypeTests.java
+ Classes.PokemonTypes.PlantTypeTests
+Classes/PokemonTypes/WaterTypeTests.java
+ Classes.PokemonTypes.WaterTypeTests

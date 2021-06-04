@@ -1,0 +1,10 @@
+Classes/PokemonTypes/FireType.java
+ Classes.PokemonTypes.FireType
+Classes/PokemonTypes/WaterType.java
+ Classes.PokemonTypes.WaterType
+Classes/IPokemon.java
+ Classes.IPokemon
+Classes/PokemonProfile.java
+ Classes.PokemonProfile
+Classes/PokemonTypes/PlantType.java
+ Classes.PokemonTypes.PlantType

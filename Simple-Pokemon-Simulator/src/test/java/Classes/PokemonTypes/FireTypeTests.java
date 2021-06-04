@@ -1,12 +1,13 @@
-package PokemonTypesTests;
+package Classes.PokemonTypes;
 
-import Classes.PokemonTypes.WaterType;
 import Classes.PokemonTypes.FireType;
 import Classes.PokemonTypes.PlantType;
+import Classes.PokemonTypes.WaterType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 
 class FireTypeTests {
 

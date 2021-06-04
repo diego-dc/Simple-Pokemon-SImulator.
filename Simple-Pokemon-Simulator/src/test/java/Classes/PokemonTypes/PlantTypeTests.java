@@ -1,8 +1,5 @@
-package PokemonTypesTests;
+package Classes.PokemonTypes;
 
-import Classes.PokemonTypes.WaterType;
-import Classes.PokemonTypes.FireType;
-import Classes.PokemonTypes.PlantType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

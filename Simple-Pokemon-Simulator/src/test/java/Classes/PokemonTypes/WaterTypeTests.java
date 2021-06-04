@@ -1,7 +1,4 @@
-package PokemonTypesTests;
-import Classes.PokemonTypes.WaterType;
-import Classes.PokemonTypes.FireType;
-import Classes.PokemonTypes.PlantType;
+package Classes.PokemonTypes;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -42,7 +39,7 @@ public class WaterTypeTests {
 
     @Test
     void attackedFrom() {
-        pokemonDeFireType.Attack(pokemonDeWaterType3);
+        pokemonDePlantType.Attack(pokemonDeWaterType3);
         assertEquals(pokemonDeWaterType3.isKO(), true, "If pokemonDeAgua3's health is 0, isKO() should be true");
     }
 }
