@@ -1,6 +1,7 @@
-package Classes.PokemonTypes;
+package Classes.Pokemons.PokemonTypes;
 
-import Classes.PokemonProfile;
+import Classes.Pokemons.PokemonProfile;
+import Classes.Pokemons.IPokemon;
 
 
 /**
@@ -17,14 +18,14 @@ public class PlantType extends PokemonProfile
      * Constructor for our PlantType Pokemon class
      * it will require a name, specie, an amount of health and some base attack
      */
-    public PlantType(String name, String specie, double hp, double attack)
+    public PlantType(String name, String specie, double hp, double attack, double pp)
     {
-        super(name, specie, hp, attack);
+        super(name, specie, hp, attack, pp);
     }
 
 
     @Override
-    public void Attack(Classes.IPokemon IPokemon){
+    public void Attack(IPokemon IPokemon){
         IPokemon.AttackedFromPlant(this);
     }
 

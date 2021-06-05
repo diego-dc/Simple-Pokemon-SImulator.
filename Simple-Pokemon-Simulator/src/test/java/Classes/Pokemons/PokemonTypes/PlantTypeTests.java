@@ -1,4 +1,4 @@
-package Classes.PokemonTypes;
+package Classes.Pokemons.PokemonTypes;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,11 +15,11 @@ class PlantTypeTests {
 
     @BeforeEach
     void setUp() throws Exception {
-        pokemonDePlantType = new PlantType("filip", "plantatype", 10.0, 5.0);
-        pokemonDePlantType2 = new PlantType("filip2", "plantatype", 10.0, 5.0);
-        pokemonDePlantType3 = new PlantType("filip3", "plantatype", 10.0, 5.0);
-        pokemonDeFireType = new FireType("miguelito", "Charizard", 10.0, 5.0);
-        pokemonDeWaterType = new WaterType("derek", "watertype", 10.0, 5.0);
+        pokemonDePlantType = new PlantType("filip", "plantatype", 10.0, 5.0, 100);
+        pokemonDePlantType2 = new PlantType("filip2", "plantatype", 10.0, 5.0, 100);
+        pokemonDePlantType3 = new PlantType("filip3", "plantatype", 10.0, 5.0,100);
+        pokemonDeFireType = new FireType("miguelito", "Charizard", 10.0, 5.0, 100);
+        pokemonDeWaterType = new WaterType("derek", "watertype", 10.0, 5.0, 100);
     }
 
     @Test
@@ -35,9 +35,9 @@ class PlantTypeTests {
         pokemonDePlantType.Attack(pokemonDeWaterType);
         pokemonDePlantType.Attack(pokemonDePlantType2);
         pokemonDePlantType.Attack(pokemonDeFireType);
-        assertEquals(pokemonDeWaterType.getHp(), 0.0, "Water type After being attacked by a plant type Health should be 5");
-        assertEquals(pokemonDePlantType2.getHp(), 5.0, "Plant type After being attacked by a plant type Health should be 0");
-        assertEquals(pokemonDeFireType.getHp(), 5.0, "Fire type After being attacked by a plant type Health should be 5");
+        assertEquals(pokemonDeWaterType.getCurrentHP(), 0.0, "Water type After being attacked by a plant type Health should be 5");
+        assertEquals(pokemonDePlantType2.getCurrentHP(), 5.0, "Plant type After being attacked by a plant type Health should be 0");
+        assertEquals(pokemonDeFireType.getCurrentHP(), 5.0, "Fire type After being attacked by a plant type Health should be 5");
     }
 
     @Test

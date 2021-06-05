@@ -1,7 +1,7 @@
-package Classes.PokemonTypes;
+package Classes.Pokemons.PokemonTypes;
 
-import Classes.IPokemon;
-import Classes.PokemonProfile;
+import Classes.Pokemons.IPokemon;
+import Classes.Pokemons.PokemonProfile;
 
 /**
  * Fire Type Pokemon.
@@ -17,13 +17,13 @@ public class FireType extends PokemonProfile {
      * Constructor for our FireType Pokemon class
      * it will require a name, specie, an amount of health and some base attack
      */
-    public FireType(String name, String specie, double hp, double attack)
+    public FireType(String name, String specie, double hp, double attack, double pp)
     {
-        super(name, specie, hp, attack);
+        super(name, specie, hp, attack, pp);
     }
 
     @Override
-    public void Attack(Classes.IPokemon IPokemon){
+    public void Attack(IPokemon IPokemon){
         IPokemon.AttackedFromFire(this);
     }
 

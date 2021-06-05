@@ -1,8 +1,5 @@
-package Classes.PokemonTypes;
+package Classes.Pokemons.PokemonTypes;
 
-import Classes.PokemonTypes.FireType;
-import Classes.PokemonTypes.PlantType;
-import Classes.PokemonTypes.WaterType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -19,11 +16,11 @@ class FireTypeTests {
 
     @BeforeEach
     void setUp() throws Exception {
-        pokemonDeFireType = new FireType("miguelito", "Charizard", 10.0, 5.0);
-        pokemonDeFireType2 = new FireType("miguelote", "Charizard", 10.0, 5.0);
-        pokemonDeFireType3 = new FireType("miguelotex", "Charizard", 10.0, 5.0);
-        pokemonDePlantType = new PlantType("filip", "plantatype", 10.0, 5.0);
-        pokemonDeWaterType = new WaterType("derek", "watertype", 10.0, 5.0);
+        pokemonDeFireType = new FireType("miguelito", "Charizard", 10.0, 5.0, 100);
+        pokemonDeFireType2 = new FireType("miguelote", "Charizard", 10.0, 5.0, 100);
+        pokemonDeFireType3 = new FireType("miguelotex", "Charizard", 10.0, 5.0, 100);
+        pokemonDePlantType = new PlantType("filip", "plantatype", 10.0, 5.0, 100);
+        pokemonDeWaterType = new WaterType("derek", "watertype", 10.0, 5.0, 100);
     }
 
     @Test
@@ -39,9 +36,9 @@ class FireTypeTests {
         pokemonDeFireType.Attack(pokemonDeWaterType);
         pokemonDeFireType.Attack(pokemonDeFireType2);
         pokemonDeFireType.Attack(pokemonDePlantType);
-        assertEquals(pokemonDeWaterType.getHp(), 5.0, "Water type After being attacked by a fire type Health should be 5");
-        assertEquals(pokemonDePlantType.getHp(), 0.0, "Plant type After being attacked by a fire type Health should be 0");
-        assertEquals(pokemonDeFireType2.getHp(), 5.0, "Fire type After being attacked by a fire type Health should be 5");
+        assertEquals(pokemonDeWaterType.getCurrentHP(), 5.0, "Water type After being attacked by a fire type Health should be 5");
+        assertEquals(pokemonDePlantType.getCurrentHP(), 0.0, "Plant type After being attacked by a fire type Health should be 0");
+        assertEquals(pokemonDeFireType2.getCurrentHP(), 5.0, "Fire type After being attacked by a fire type Health should be 5");
     }
 
     @Test

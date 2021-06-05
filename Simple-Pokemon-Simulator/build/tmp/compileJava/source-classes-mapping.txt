@@ -1,10 +1,28 @@
-Classes/PokemonTypes/FireType.java
- Classes.PokemonTypes.FireType
-Classes/PokemonTypes/WaterType.java
- Classes.PokemonTypes.WaterType
-Classes/IPokemon.java
- Classes.IPokemon
-Classes/PokemonProfile.java
- Classes.PokemonProfile
-Classes/PokemonTypes/PlantType.java
- Classes.PokemonTypes.PlantType
+Classes/Pokemons/Factory/FireTypePokemon.java
+ Classes.Pokemons.Factory.FireTypePokemon
+Classes/Pokemons/PokemonTypes/FireType.java
+ Classes.Pokemons.PokemonTypes.FireType
+Classes/Pokemons/PokemonProfile.java
+ Classes.Pokemons.PokemonProfile
+Classes/Items/EtherItem.java
+ Classes.Items.EtherItem
+Classes/Items/IItem.java
+ Classes.Items.IItem
+Classes/Items/PotionItem.java
+ Classes.Items.PotionItem
+Classes/Items/FullRestorePotionItem.java
+ Classes.Items.FullRestorePotionItem
+Classes/Pokemons/Factory/AbstractPokemonFactory.java
+ Classes.Pokemons.Factory.AbstractPokemonFactory
+Classes/Pokemons/IPokemon.java
+ Classes.Pokemons.IPokemon
+Classes/Pokemons/PokemonTypes/WaterType.java
+ Classes.Pokemons.PokemonTypes.WaterType
+Classes/Pokemons/PokemonTypes/PlantType.java
+ Classes.Pokemons.PokemonTypes.PlantType
+Classes/Pokemons/Factory/PlantTypePokemon.java
+ Classes.Pokemons.Factory.PlantTypePokemon
+Classes/Pokemons/Factory/WaterTypePokemon.java
+ Classes.Pokemons.Factory.WaterTypePokemon
+Classes/Pokemons/Factory/IPokemonFactory.java
+ Classes.Pokemons.Factory.IPokemonFactory

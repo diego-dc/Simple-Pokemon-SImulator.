@@ -1,7 +1,7 @@
-package Classes.PokemonTypes;
+package Classes.Pokemons.PokemonTypes;
 
-import Classes.IPokemon;
-import Classes.PokemonProfile;
+import Classes.Pokemons.IPokemon;
+import Classes.Pokemons.PokemonProfile;
 
 /**
  * Water Type Pokemon.
@@ -18,9 +18,9 @@ public class WaterType extends PokemonProfile
      * Constructor for our WaterType Pokemon class
      * it will require a name, specie, an amount of health and some base attack
      */
-    public WaterType(String name, String specie, double hp, double attack)
+    public WaterType(String name, String specie, double hp, double attack, double pp)
     {
-        super(name, specie, hp, attack);
+        super(name, specie, hp, attack, pp);
     }
 
 

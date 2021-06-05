@@ -1,6 +1,10 @@
-Classes/PokemonTypes/FireTypeTests.java
- Classes.PokemonTypes.FireTypeTests
-Classes/PokemonTypes/PlantTypeTests.java
- Classes.PokemonTypes.PlantTypeTests
-Classes/PokemonTypes/WaterTypeTests.java
- Classes.PokemonTypes.WaterTypeTests
+Classes/AbstractPokemonTests.java
+ Classes.AbstractPokemonTests
+Classes/Pokemons/PokemonTypes/PlantTypeTests.java
+ Classes.Pokemons.PokemonTypes.PlantTypeTests
+Classes/Pokemons/PokemonTypes/FireTypeTests.java
+ Classes.Pokemons.PokemonTypes.FireTypeTests
+Classes/Pokemons/PokemonTypes/WaterTypeTests.java
+ Classes.Pokemons.PokemonTypes.WaterTypeTests
+Classes/PokemonTests.java
+ Classes.PokemonTests

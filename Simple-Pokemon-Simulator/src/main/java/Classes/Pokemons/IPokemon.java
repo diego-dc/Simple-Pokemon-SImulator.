@@ -1,8 +1,8 @@
-package Classes;
+package Classes.Pokemons;
 
-import Classes.PokemonTypes.FireType;
-import Classes.PokemonTypes.PlantType;
-import Classes.PokemonTypes.WaterType;
+import Classes.Pokemons.PokemonTypes.FireType;
+import Classes.Pokemons.PokemonTypes.PlantType;
+import Classes.Pokemons.PokemonTypes.WaterType;
 
 /**
  * Interface Pokemon
@@ -28,9 +28,31 @@ public interface IPokemon {
      * Pokemon can receive damage.
      * Damage affects directly the health points.
      *
-     * @param Damage
+     * @param damage
+     *      amount of damage received
      */
-    void receiveDamage(double Damage);
+    void receiveDamage(double damage);
+
+    /**
+     * Pokemon can receive some healing.
+     * Healing affects directly the health points.
+     *
+     * @param healAmount
+     *      amount of heal received
+     */
+    void receiveHeal(double healAmount);
+
+
+    /**
+     * Pokemon use power points to realize actions
+     */
+    void UsePP(double ppUsed);
+
+
+    /**
+     * Pokemon can receive power points
+     */
+    void ReceivePP(double ppReceived);
 
 
     /** Attack received by PlantType Pokemon */
